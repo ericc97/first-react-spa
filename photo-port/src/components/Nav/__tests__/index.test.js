@@ -7,6 +7,9 @@ const categories = [
     { name: 'portraits', description: 'Portraits of people in my life' }
 ]
 
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
+
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
 
@@ -20,6 +23,8 @@ describe('Renders Nav components', () => {
         categories={categories}
         setCurrentCategory={mockSetCurrentCategory}
         currentCategory={mockCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
         />);
     });
 
@@ -30,6 +35,8 @@ describe('Renders Nav components', () => {
                                     categories={categories}
                                     setCurrentCategory={mockSetCurrentCategory}
                                     currentCategory={mockCurrentCategory}
+                                    contactSelected={mockContactSelected}
+                                    setContactSelected={mockSetContactSelected}
                                     />);
         //assert value comparison
         expect(asFragment()).toMatchSnapshot();
@@ -43,6 +50,8 @@ describe('Emojis are visable', () => {
                                         categories={categories}
                                         setCurrentCategory={mockSetCurrentCategory}
                                         currentCategory={mockCurrentCategory}
+                                        contactSelected={mockContactSelected}
+                                        setContactSelected={mockSetContactSelected}
             />);
         // Assert
         // eslint-disable-next-line testing-library/prefer-screen-queries
@@ -58,6 +67,8 @@ describe('Links are visible', () => {
                                         categories={categories}
                                         setCurrentCategory={mockSetCurrentCategory}
                                         currentCategory={mockCurrentCategory}
+                                        contactSelected={mockContactSelected}
+                                        setContactSelected={mockSetContactSelected}
                                         />);
         // Assert
         // eslint-disable-next-line testing-library/prefer-screen-queries
