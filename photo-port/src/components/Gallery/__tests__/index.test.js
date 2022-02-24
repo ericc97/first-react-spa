@@ -21,6 +21,7 @@ describe('Should render the Gallery', () => {
     // test to make sure the title of <h1> = portraits
     it('renders h1 text', () => {
         const { getByTestId } = render(<Gallery currentCategory={portrait} />)
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
     })
 })
